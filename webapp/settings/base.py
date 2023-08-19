@@ -16,6 +16,7 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+env_vars = os.environ.copy()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -86,8 +87,12 @@ WSGI_APPLICATION = "webapp.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": env_vars["MYSQL_DATABASE"] if "MYSQL_DATABASE" in env_vars else "",
+        "USER": env_vars["MYSQL_USER"] if "MYSQL_USER" in env_vars else "",
+        "PASSWORD": env_vars["MYSQL_PASSWORD"] if "MYSQL_PASSWORD" in env_vars else "",
+        "HOST": env_vars["MYSQL_HOST"] if "MYSQL_HOST" in env_vars else "",
+        "PORT": env_vars["MYSQL_PORT"] if "MYSQL_PORT" in env_vars else "",
     }
 }
 
