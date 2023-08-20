@@ -18,6 +18,12 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 env_vars = os.environ.copy()
 
+if "DJANGO_SECRET_KEY" in env_vars:
+    SECRET_KEY = env_vars["DJANGO_SECRET_KEY"]
+
+if "DJANGO_ALLOWED_HOSTS" in env_vars:
+    ALLOWED_HOSTS = env_vars["DJANGO_ALLOWED_HOSTS"].split(",")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -156,7 +162,7 @@ MEDIA_URL = "/media/"
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "webapp"
+WAGTAIL_SITE_NAME = env_vars["WAGTAIL_SITE_NAME"] if "WAGTAIL_SITE_NAME" in env_vars else ""
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
@@ -168,4 +174,4 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://example.com"
+WAGTAILADMIN_BASE_URL = env_vars["BASE_URL"] if "BASE_URL" in env_vars else ""
