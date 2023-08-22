@@ -1,0 +1,27 @@
+{
+  "name": "nickmoreton.co.uk",
+  "version": "1.0.0",
+  "description": "The official [Wagtail documentation](https://wagtail.org) is excellent and I suggest you read the [Developer Documentation](https://docs.wagtail.org/en/stable/), specifically the [Your first wagtail site](https://docs.wagtail.org/en/stable/getting_started/tutorial.html) but I wanted to document the process I go through to build a Wagtail site from scratch.",
+  "main": "webpack.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack --mode development --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10",
+    "babel-loader": "^9.1.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

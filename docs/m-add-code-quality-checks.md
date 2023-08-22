@@ -211,4 +211,4 @@ jobs:
     # I'll be adding more checks here later on
 ```
 
-Up Next - [Some TODO's](./m-todos.md)
+Up Next - [Set up Webpack and client side code compilation](./n-frontend-compiling.md)
