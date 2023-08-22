@@ -15,8 +15,8 @@ The tech stack so far is:
 - ✅ Python:3.10
 - ✅ Mysql:5.7 (this is a limitation of PythonAnywhere)
 - Node / webpack to build the frontend
-- CI actions for code checks
-- Pre-commit to run git hooks
+- ✅ CI actions for code checks
+- ✅ Pre-commit to run git hooks
 - ✅ Git push deployments to PythonAnywhere (like Heroku etc.)
 - ✅ Wagtail CMS v5.1.1
 - ✅ Django 4.1 (Mysql 5.7 requires Django < 4.2)
@@ -40,6 +40,7 @@ The finished source code for the live site is here [https://github.com/nickmoret
 - [Update the WSGI file on PythonAnywhere](./docs/k-update-the-wsgi-file.md)
 - [Start a deployemnt](./docs/l-push-to-the-bare-repo.md)
 - Up and running on PythonAnywhere...
-- [Some TODO's](./docs/m-todos.md)
+- [Add code quality checks](./docs/m-add-code-quality-checks.md)
+- [Some TODO's](./docs/z-todos.md)
 
 Up Next - [Create a git repo to store the source code](./docs/a-1-create-a-origin-repo.md)

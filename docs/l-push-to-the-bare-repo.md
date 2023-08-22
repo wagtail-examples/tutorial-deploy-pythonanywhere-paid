@@ -34,4 +34,4 @@ And run:
 
 If you now visit webapp and login at `/admin` you should be able to test out the default Wagtail CMS
 
-Up Next - [Some TODO's](./m-todos.md)
+Up Next - [Add code quality checks](./m-add-code-quality-checks.md)
