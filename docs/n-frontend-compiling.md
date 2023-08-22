@@ -312,4 +312,4 @@ svg .egg {
 }
 ```
 
-Up Next - [Some TODO's](./z-todos.md)
+Up Next - [Use pre-commit to ensure static assets are production ready](./o-static-compiled-pre-commit.md)

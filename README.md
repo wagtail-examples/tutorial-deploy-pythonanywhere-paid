@@ -42,6 +42,8 @@ The finished source code for the live site is here [https://github.com/nickmoret
 - Up and running on PythonAnywhere...
 - [Add code quality checks](./docs/m-add-code-quality-checks.md)
 - [Add frontend/webpack to the project](./docs/n-frontend-compiling.md)
+- [Use pre-commit to ensure static assets are production ready](./docs/o-static-compiled-pre-commit.md)
+- Try out a push to the bare repo...
 - [Some TODO's](./docs/z-todos.md)
 
 Up Next - [Create a git repo to store the source code](./docs/a-1-create-a-origin-repo.md)
