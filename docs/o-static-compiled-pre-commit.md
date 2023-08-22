@@ -95,4 +95,4 @@ jobs:
 
 This will run each time you push to a branch other than `main` and on every pull request to `main`. Depending on your account set up you should receive an email if the CI action fails.
 
-Up Next - [Some TODO's](./z-todos.md)
+Up Next - [Add CI checks for migrations and requirements](./0-ci-checks-requirements-migrations.md)
