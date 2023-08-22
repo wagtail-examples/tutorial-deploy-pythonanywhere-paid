@@ -162,7 +162,9 @@ MEDIA_URL = "/media/"
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = env_vars["WAGTAIL_SITE_NAME"] if "WAGTAIL_SITE_NAME" in env_vars else ""
+WAGTAIL_SITE_NAME = (
+    env_vars["WAGTAIL_SITE_NAME"] if "WAGTAIL_SITE_NAME" in env_vars else ""
+)
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
