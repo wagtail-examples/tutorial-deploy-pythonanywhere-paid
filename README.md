@@ -50,52 +50,11 @@ Up Next - [Create a git repo to store the source code](./docs/a-1-create-a-origi
 
 ## Whats missing?
 
-There's more that could be done.
+There's more that could be done, here's a few extra guides.
 
-### A staging/client review site
-
-When building new features, it's useful to have a staging site that the client can review. This isn't complicated to set up on PythonAnywhere because you can have multiple sites on one account, they only cost just over €1/month extra for each one.
-
-You'd need to create a new webapp and a new database. Then go through the steps in this tutorial again and use a different branch for the code e.g. `staging`.
-
-### A backup strategy
-
-It's possible to add a scheduled task in PythonAnywhere to run a script that backs up the database and uploads it to a cloud storage provider like AWS S3. You could also backup the media  files in the same way.
-
-### A guide to using git pull deployments
-
-I've not covered this in this tutorial but it's possible to use git pull deployments on PythonAnywhere. You can still use this tutorial to get up and running but you'll need to do your deployments from a console on PythonAnywhere using `git pull`.
-
-#### Roughly: You'd need to follow these steps
-
-- [Set up a webapp on PythonAnywhere](./docs/a-2-create-a-webapp.md)
-- [Python dependencies](./docs/b-python-dependencies.md)
-- [Start a Wagtail site](./docs/c-wagtail-start.md)
-- [Setup environment variables](./docs/d-add-envvars.md)
-- [Add a local mysql docker container for development](./docs/e-add-mysql-docker.md)
-- [Configure Wagtail to use the Mysql database](./docs/f-switch-to-mysql.md)
-- Up and running locally...
-- [Create a Mysql database on PythonAnywhere](./docs/g-create-mysql-on-pythonanywhere.md)
-- [Update some web app settings on PythonAnywhere](./docs/h-update-some-webapp-settings.md)
-- [Alter Wagtail settings to use more environment variables](./docs/i-alter-settings-extra-vars.md)
-- [Update the WSGI file on PythonAnywhere](./docs/k-update-the-wsgi-file.md)
-- Git pull your code...
-
-But not set up the bare-repo and post-receive hook.
-
-### How to setup sending emails
-
-Outbound emails are useful for at least password reminders but more so for notifications if using the Wagtail Form Builder. There's lots of 3rd party services that can be used for this. But for small sites SMTP from your email provider should be fine.
-
-It could be as easy as adding the following to the `settings/base.py` file:
-
-```python
-# EMAIL
-EMAIL_HOST = env_vars["EMAIL_HOST"] if "EMAIL_HOST" in env_vars else ""
-EMAIL_PORT = env_vars["EMAIL_PORT"] if "EMAIL_PORT" in env_vars else ""
-EMAIL_HOST_USER = env_vars["EMAIL_HOST_USER"] if "EMAIL_HOST_USER" in env_vars else ""
-EMAIL_HOST_PASSWORD = env_vars["EMAIL_HOST_PASSWORD"] if "EMAIL_HOST_PASSWORD" in env_vars else ""
-EMAIL_SENDER_ADDRESS = env_vars["EMAIL_SENDER_ADDRESS"] if "EMAIL_SENDER_ADDRESS" in env_vars else ""
-```
-
-And then adding the environment variables to the `.env` file created here [Setup environment variables](./docs/a-2-create-a-webapp.md#environment-variables-storage)
+- [A staging/client review site](./docs/more/a-stagingclient-review-site.md)
+- [A backup strategy](./docs/more/b-a-backup-strategy.md)
+- [A guide to using git pull deployments](./docs/more/c-a-guide-to-using-git-pull-deployments.md)
+- [How to setup sending emails](./docs/more/d-how-to-setup-sending-emails.md)
+- [Database backup and restore](./docs/more/e-database-backup-and-restore.md)
+- [Media files backup and restore](./docs/more/f-media-files-backup-and-restore.md)

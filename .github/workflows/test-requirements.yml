@@ -3,6 +3,7 @@ name: check requirements
 on:
   push:
     branches:
+      - '**'
       - '!main'
       
   pull_request:
