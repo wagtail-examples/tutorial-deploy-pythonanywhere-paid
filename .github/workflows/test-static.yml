@@ -3,6 +3,7 @@ name: check static assets
 on:
   push:
     branches:
+      - '**'
       - '!main'
       
   pull_request:
