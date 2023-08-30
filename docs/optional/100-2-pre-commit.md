@@ -24,6 +24,7 @@ Create a `.pre-commit-config.yaml` file in the root of the project:
 
 ```yaml
 repos:
+  # These hooks make sure that the code is formatted correctly
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
@@ -58,11 +59,29 @@ repos:
         pass_filenames: false
         always_run: true
         stages: [commit]
+      - id: check-static
+        name: Check static files
+        entry: ./checks/static.sh
+        language: system
+        types: [css, javascript]
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
 ```
 
 ### Add the git hook entry points
 
 Create a `checks` directory in the root of the project and add the following files:
+
+```bash
+mkdir checks
+touch checks/dependencies.sh
+touch checks/migrations.sh
+touch checks/static.sh
+chmod +x checks/*.sh
+```
+
+Update the content of each file as follows:
 
 File `checks/dependencies.sh`:
 
@@ -123,7 +142,23 @@ else
 fi
 ```
 
-### Using Pipenv install some development dependencies
+File `checks/static.sh`:
+
+```bash
+#!/bin/bash
+
+# This script generates production-ready files for the scripts and styles
+# It runs npm run build
+# If files are changed then fails
+
+# Exit on error
+set -e
+
+# Run npm run build
+npm run build
+```
+
+### Use Pipenv to install some development dependencies
 
 ```bash
 pipenv install --dev black==23.7.0 pre-commit==3.3.3 flake8==6.1.0 isort==5.12.0 tomli==2.0.1
@@ -155,60 +190,5 @@ git commit -m "add your commit message here"
 ```
 
 > Having pre-commit installed means that every time you commit code, the pre-commit hooks will run and check your code. If there are any errors, the commit will fail and you'll need to fix the errors before you can commit again.
-
-## CI actions
-
-[Git Hub CI actions](https://docs.github.com/en/actions) are a way to automate tasks on your code. You can use them to run tests, check code style, deploy code and much more.
-
-*The code samples below are for use with Github Actions. If you use a different git provider, you'll need to check their documentation for how to set up CI scripts.*
-
-### Create a CI action to run the code-style checks
-
-Create a `.github/workflows/test-codestyle.yml` file and add the following code:
-
-```yaml
-name: check code style
-
-on:
-  push:
-    branches:
-      - '!main' # will run on all branches except the main branch
-      
-  pull_request:
-    branches:
-      - main # will run on pull requests to the main branch
-
-jobs:
-  code-style:
-    name: Code Style
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Dependencies
-        # uses pipenv to install the dependencies incl. dev dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install pipenv
-          pipenv install --dev --deploy
-
-      - name: Flake8
-        run: pipenv run flake8 ./
-
-      - name: Isort
-        run: pipenv run isort ./ --check
-
-      - name: Black
-        run: pipenv run black ./ --check
-    
-    # I'll be adding more checks here later on
-```
-
-Up Next - [Set up Webpack and client side code compilation](./n-frontend-compiling.md)
+>
+> Make sure you have stopped the npm server before you commit, the one you started with `npm start`.

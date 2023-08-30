@@ -42,7 +42,7 @@ To pull the database backup to your local machine:
 First cd into the project directory:
 
 ```bash
-cd ~/PythonAnywhere/nickmoreton.co.uk # use your own project directory
+cd ~/PythonAnywhere/your-project-directory
 ```
 
 Then run the following command:
@@ -62,8 +62,6 @@ echo "/dbbackups" >> .gitignore
 You'll need to make sure the docker instance of `Mysql` is running locally.
 
 > If you database name is different then substitute `webapp` for your database name.
->
-> Replace `/var/www/sites/nickmoreton.co.uk` with the path to your project directory on PythonAnywhere.
 
 Open the `docker-compose.yml` file and add a new location of `./dbbackups:/dbbackups` to the `volumes` section:
 

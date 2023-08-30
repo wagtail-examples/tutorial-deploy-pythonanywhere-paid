@@ -22,10 +22,10 @@ Instructions can be viewed at [https://github.com/nvm-sh/nvm](https://github.com
 brew install nvm
 ```
 
-### Install node
+### Use node version 18
 
 ```bash
-nvm install
+nvm use
 ```
 
 If you don't have the correct version of node installed a message will tell you that and you can install it with:
@@ -58,7 +58,7 @@ npm install --save-dev \
     webpack-dev-server
 ```
 
-This will have created a `node_modules` directory in the root of your project. That's not a file we need to commit to the repository so add it to the `.gitignore` file.
+This will have created a `node_modules` directory in the root of your project. It's not a folder we need to commit to the repository so add it to the `.gitignore` file.
 
 ```bash
 echo "node_modules" >> .gitignore
@@ -168,7 +168,7 @@ Add the following scripts to the `package.json` file:
 To compile the client side code during development run:
 
 ```bash
-npm run start # which will compile and watch for changes
+npm start # which will compile and watch for changes
 ```
 
 To compile the client side code for production run:
@@ -205,15 +205,17 @@ rm -rf webapp/static/css webapp/static/js
 
 ## Run the development server
 
+In a new console run the development server (after activating the virtualenv):
+
 ```bash
-pipenv run python manage.py runserver
+python manage.py runserver
 ```
+
+As long as you are running the `npm start` command in the other console...
 
 Open your browser at [http://localhost:3000](http://localhost:3000) and you should see the home page with a grey background and a message in the console.
 
 Try changing the background color in `client/styles/index.scss` and you should see the changes in the browser without having to refresh the page.
-
-Up Next - [Some TODO's](./m-todos.md)
 
 ## 😜 Just for fun
 
@@ -312,4 +314,4 @@ svg .egg {
 }
 ```
 
-Up Next - [Use pre-commit to ensure static assets are production ready](./o-static-compiled-pre-commit.md)
+Now if you view the Wagtail start page (home) it's going to look a little different.
