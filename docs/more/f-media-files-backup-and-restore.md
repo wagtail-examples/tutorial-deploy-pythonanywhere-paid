@@ -8,7 +8,7 @@ These commands can be used to copy the media files from the live site to your lo
 First cd into the project directory on your local machine:
 
 ```bash
-cd ~/PythonAnywhere/nickmoreton.co.uk # use your own project directory
+cd ~/PythonAnywhere/your-project-directory
 ```
 
 Ensure the media directory exists:
@@ -20,5 +20,5 @@ mkdir -p ./media
 Then run the following command:
 
 ```bash
-scp -r *your-account-name*@ssh.eu.pythonanywhere.com:/var/www/sites/nickmoreton.co.uk/media ./
+scp -r *your-account-name*@ssh.eu.pythonanywhere.com:/var/www/sites/your-site-directory/media ./
 ```

@@ -1,22 +1,26 @@
 # Contents
 
-- [Create a git repo to store the source code](./a-1-create-a-origin-repo.md)
-- [Set up a webapp on PythonAnywhere](./a-2-create-a-webapp.md)
-- [Python dependencies](./b-python-dependencies.md)
-- [Start a Wagtail site](./c-wagtail-start.md)
-- [Setup environment variables](./d-add-envvars.md)
-- [Add a local mysql docker container for development](./e-add-mysql-docker.md)
-- [Configure Wagtail to use the Mysql database](./f-switch-to-mysql.md)
-- Up and running locally...
-- [Create a Mysql database on PythonAnywhere](./g-create-mysql-on-pythonanywhere.md)
-- [Update some web app settings on PythonAnywhere](./h-update-some-webapp-settings.md)
-- [Alter Wagtail settings to use more environment variables](./i-alter-settings-extra-vars.md)
-- [Add further steps to the post-recieve hook](./j-add-further-deploy-hooks.md)
-- [Update the WSGI file on PythonAnywhere](./k-update-the-wsgi-file.md)
-- [Start a deployemnt](./l-push-to-the-bare-repo.md)
-- Up and running on PythonAnywhere...
-- [Add code quality checks](./m-add-code-quality-checks.md)
-- [Add frontend/webpack to the project](./n-frontend-compiling.md)
-- [Use pre-commit to ensure static assets are production ready](./o-static-compiled-pre-commit.md)
-- Try out a push to the bare repo...
-- [Add CI checks for migrations and requirements](./p-ci-checks-requirements-migrations.md)
+Required steps
+
+- [Initial repo and starting a new Wagtail project](./required/100-1-start-wagtail.md)
+- [Setup to use Mysql](./required/100-2-use-mysql.md)
+- [Set up a webapp and bare-repo on PythonAnywhere](./required/200-1-webapp-setup.md)
+- [Add further deployment settings](./required/200-2-deploy-hooks-wsgi.md)
+- [Start a deployment](./required/200-3-push-to-deploy.md)
+
+The site can be viewed on PythonAnywhere at this point.
+
+## Optional (recommended) steps
+
+- [Add frontend/webpack to the project](./optional/100-1-add-frontend-compilation.md)
+- [Add code quality checks using pre-commit](./optional/100-2-pre-commit.md)
+- [Add GitHub Actions CI checks](./optional/100-3-ci-actions.md)
+
+There's more that could be done, here's a few extra guides.
+
+- [A staging/client review site](./more/a-stagingclient-review-site.md)
+- [A backup strategy](./more/b-a-backup-strategy.md)
+- [A guide to using git pull deployments](./more/c-a-guide-to-using-git-pull-deployments.md)
+- [How to setup sending emails](./more/d-how-to-setup-sending-emails.md)
+- [Database backup and restore](./more/e-database-backup-and-restore.md)
+- [Media files backup and restore](./more/f-media-files-backup-and-restore.md)
