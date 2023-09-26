@@ -18,7 +18,7 @@ MYSQL_DATABASE=webapp
 MYSQL_USER=webapp
 MYSQL_PASSWORD=webapp
 MYSQL_ROOT_HOST='%'
-MYSQL_HOST='127.0.0.1'
+MYSQL_HOST=127.0.0.1
 MYSQL_PORT=3306
 ```
 
@@ -47,7 +47,7 @@ Create a `docker-compose.yml` file in the root of the project and add the follow
 ```yaml
 services:
   db:
-    image: mysql:5.7 # version in use on pythonanywhere
+    image: mysql:8.0.29 # version in use on pythonanywhere
     command: --default-authentication-plugin=mysql_native_password
     env_file:
       - .env
