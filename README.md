@@ -13,12 +13,12 @@ I wanted to document the process I go through. I've actually built and deployed 
 The code here is the complete source code after following the steps below.
 
 - ✅ Python:3.10
-- ✅ Mysql:5.7 (this is a limitation of my PythonAnywhere account)
+- ✅ Mysql Database
 - ✅ Node / webpack to build the frontend
 - ✅ CI actions for code checks
 - ✅ Pre-commit to run git hooks
 - ✅ Wagtail CMS v5.1.1
-- ✅ Django 4.1 (Mysql 5.7 requires Django < 4.2)
+- ✅ Django 4.2
 
 > Because I'm using git push to deploy the webapp and that requires SSH access, I am using a paid account on PythonAnywhere, which starts at €5/month.
 

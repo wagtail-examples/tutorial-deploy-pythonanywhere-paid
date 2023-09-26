@@ -13,10 +13,8 @@ There are a few ways to manage python dependencies, I'm using [Pipenv](https://p
 With [Pipenv](https://pipenv.pypa.io/en/latest/) installed run:
 
 ```bash
-pipenv install "wagtail>=5.1,<5.2" "mysqlclient>=2.2,<2.3" "python-dotenv>=1.0,<1.1" "django>=4.1,<4.2"
+pipenv install "wagtail>=5.1,<5.2" "mysqlclient>=2.2,<2.3" "python-dotenv>=1.0,<1.1" "django>=4.2,<5.0"
 ```
-
-> I'm using Django v4.1 as my PythonAnywhere account uses Mysql v5.7 and Django v4.2+ requires Mysql v8.0+. If your account uses Mysql v8.0+ then you can omit the Django constraint.
 
 Then create an initial requirements file with:
 
